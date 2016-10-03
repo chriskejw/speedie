@@ -8,8 +8,8 @@ var colors = ["red, green, blue, yellow, black"];
 
 
 //start button -> activates startGame ()
-$('button').on('click', function () {
-  $('button').remove();
+$('.btn btn-success').on('click', function () {
+  $('.btn btn-success').remove();
   // startGame();
   // gameMusic();
   winnerSound();

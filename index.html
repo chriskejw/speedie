@@ -2,7 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>speedie</title>
+    <title>speedie click</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -11,24 +13,56 @@
       <h1 class="timer">speedie</h1>
       <div class="select">click</div>
       <div class="key"></div>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Options
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="homePage.html">Home</a></li>
+          <li><a href="http://html5games.com/">More games</a></li>
+        </ul>
+      </div>
     </header>
 
+    <div class="nav1">
+    </div>
+
     <main>
-      <div class="clickArea">
-        <div class="clickBox" id="box1"></div>
-        <div class="clickBox" id="box2"></div>
-        <div class="clickBox" id="box3"></div>
-        <div class="clickBox" id="box4"></div>
-        <div class="clickBox" id="box5"></div>
+      <div class="difficulty">
+        <h4>Difficulty:</h4>
+        <select class="form-control">
+          <option>Very Easy (Easy peasy!)</option>
+          <option>Easy (You shouldn't lose.)</option>
+          <option>Medium (Now we're talking.)</option>
+          <option>Hard (Good luck.)</option>
+          <option>Very Hard (You're outta your mind!)</option>
+        </select>
       </div>
-      <button class="startButton">START</button>
+      <button id="startGame" type="button" class="btn btn-success">Start Game</button>
+      <div class="clickBox" id="shape1"></div>
+      <div class="clickBox" id="shape2"></div>
+      <div class="clickBox" id="shape3"></div>
+      <div class="clickBox" id="shape4"></div>
+      <div class="clickBox" id="shape5"></div>
+      <div class="clickBox" id="shape6"></div>
+      <div class="clickBox" id="shape7"></div>
+      <div class="clickBox" id="shape8"></div>
+      <div class="clickBox" id="shape9"></div>
+      <div class="clickBox" id="shape10"></div>
     </main>
 
+    <div class="nav2">
+    </div>
+
     <footer>
-      FOOTER
     </footer>
+
     <audio id="win" src="/audio/win.mp3" preload="auto"></audio>
-  </body>
+    <audio id="boo" src="/audio/boo.mp3" preload="auto"></audio>
+
+</body>
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="script.js" type="text/javascript"></script>
 </html>
