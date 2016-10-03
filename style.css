@@ -1,0 +1,47 @@
+header {
+  border: 1px solid black;
+  text-align: center;
+}
+
+main {
+  border: 1px solid black;
+  text-align: center;
+  padding: 5%;
+}
+
+footer {
+  text-align: center;
+  border: 1px solid black;
+  padding: 1%;
+}
+
+button {
+  margin-top: 60px;
+}
+
+.select{
+  display:inline-block;
+  font-size: 25px;
+  vertical-align: middle;
+}
+
+.key {
+  display:inline-block;
+  width: 50px;
+  height: 25px;
+  vertical-align: middle;
+  border: 1px solid black;
+}
+
+.clickArea {
+  border: 1px solid black;
+  padding: 2%;
+}
+
+.clickBox {
+  display: inline-block;
+  border: 1px solid black;
+  height: 150px;
+  width: 150px;
+  margin: 0 20px;
+}
