@@ -1,43 +1,64 @@
 $(document).ready(function() {
 
+  // DECLARE THE VARIABLES
   var roundCount = 0; // define the first round
-  var totalRounds = 10; // define the total no. of rounds
-  var count = 100; // define the time given 1000=10s * 6000=60s;
+  var totalRounds = 20; // define the total no. of rounds
   var countDown;
-  var colors = ["red, green, blue, yellow, orange, indigo, violet"]; // define the colors
+  var colors = ["red, green, blue, yellow, orange, indigo, violet"]; // define the 7 colors
 
-  // #1 START GAME
-$('#startGame').on('click', function() {
-  $('.difficulty').remove();
-  $(this).remove();
-  countDownTimer(); // timer starts
-  randomPosition(); // generate positions
-  randomColors(); // generate colors
-  checkBox(); // check if correct box is clicked
-});
+  // SELECT DIFFICULTY
+  var count = $(function() { // define the time given
+    $('select').change(function() { // perform change based on selection from the dropdown
+      count = $(this).val(); // get the value from the selection
+
+      if (parseInt(count) === 1000) { // if the value selected corresponds with the figure, change difficulty text
+        $('.diffDisplay').text('very easy');
+      } else if (parseInt(count) === 800) {
+        $('.diffDisplay').text('easy');
+      } else if (parseInt(count) === 600) {
+        $('.diffDisplay').text('medium');
+      } else if (parseInt(count) === 400) {
+        $('.diffDisplay').text('hard');
+      } else if (parseInt(count) === 200) {
+        $('.diffDisplay').text('very hard');
+      }
+    }).change(); // trigger the event
+  });
+
+  // START GAME
+  $('#startGame').on('click', function() { //start the game when start game button is clicked
+    $('.difficulty').remove(); // remove the difficulty menu when start game button is clicked
+    $(this).remove(); // remove the start button when clicked
+    clockSound(); // start ticking music
+    countDownTimer(); // start count down timer
+    randomPosition(); // generate random positions
+    randomColors(); // generate random colors
+    checkBox(); // check if correct box is clicked
+  });
 
   // RANDOM POSITION
-function randomPosition() {
+  function randomPosition() {
 
-$('.clickBox').each(function(){
-  var mHeight = parseInt($('main').css('height'));
-  var mWidth = parseInt($('main').css("width"));
-  var randPosY = Math.floor((Math.random() * mHeight));
-  var randPosX = Math.floor((Math.random() * mWidth));
-    $(this).css({
-      left: randPosX,
-      top: randPosY
+    $('.clickBox').each(function() { // all boxes are selected
+      var mHeight = parseInt($('main').css('height')); // get height of the container
+      var mWidth = parseInt($('main').css("width")); // get width of the container
+      var randPosY = Math.floor((Math.random() * mHeight)); // generate random number based on height
+      var randPosX = Math.floor((Math.random() * mWidth)); // generate random number based on width
+      $(this).css({ // apply the random numbers to the box top and left position (absolute)
+        left: randPosX,
+        top: randPosY
+      });
     });
-  });
-}
-  // #2 GENERATE COLORS
+  }
+
+  // GENERATE COLORS
   function randomColors() {
     // create an array from 0-6
     var ar = [];
-    for (var i = 0; i<7; i++) {
+    for (var i = 0; i < 7; i++) {
       ar[i] = i;
     }
-    // sort the array of 0-4 randomly
+    // sort the array of 0-6 randomly
     ar.sort(function() {
       return Math.random() - 0.5;
     });
@@ -175,35 +196,33 @@ $('.clickBox').each(function(){
     }
   }
 
-  // #3 CHECK IF THE CORRECT BOX IS CLICKED
+  // CHECK IF THE CORRECT BOX IS CLICKED
   function checkBox() {
-    $('.clickBox').on('click', function() {
-      var color = $(this).css('background-color');
-      if (($(this).css('background')) !== ($('.key').css('background'))) {
-        wrongSound();
+    $('.clickBox').on('click', function() { // add event listener to each box
+      var color = $(this).css('background-color'); // get the background color of the box
+      if (($(this).css('background')) !== ($('.key').css('background'))) { // check if the background color matches the key
+        wrongSound(); // if not a match, play wrong sound
       } else if (($(this).css('background')) === ($('.key').css('background'))) {
-        correctSound();
-        roundCount++;
-        console.log(roundCount);
-        randomPosition();
-        randomColors();
-        console.log('randomColors');
+        correctSound(); // if match, play correct sound
+        roundCount++; // plus one to round
+        randomPosition(); // generate random positions again
+        randomColors(); // generate random colors again
       }
-      if (roundCount === totalRounds) {
+      if (roundCount === totalRounds) { // if the round count reaches the total rounds, win game
         winGame();
       }
     });
   }
 
-  // #5 COUNTERDOWN TIMER
+  // COUNTERDOWN TIMER
   function countDownTimer() {
     countDown = setInterval(counter, 100); // start countdown
   }
 
-  function counter () {
-    count--; //count down
-    $('.timer').text('Score: '+ count); // show score
-    if (count < 0) { // if score is less than 0
+  function counter() {
+    count--; // count down
+    $('.timer').text('Score: ' + count); // update and show score
+    if (count < 0) { // if score is less than 0, lose game
       loseGame();
     }
   }
@@ -211,37 +230,54 @@ $('.clickBox').each(function(){
   // WIN GAME
   function winGame() {
     clearInterval(countDown); // clear counter
-    var winAudio = document.getElementById('win');
+    var winAudio = document.getElementById('win'); // play win game sound
     winAudio.play();
-    alert('YOU DID IT! Your score is ' + count + '.'); // win game!
-    location.reload(); // reload page
+    bootbox.alert('Bravo! You did it. Your score is ' + count + '.', function() { //show win message and score
+      location.reload()
+    });
   };
 
   // LOSE GAME
   function loseGame() {
-    booSound();
     clearInterval(countDown); // clear counter
-    var booAudio = document.getElementById('boo');
-    booAudio.play();
     $('.timer').text('Score: 0'); // reset score to 0
-    alert("YOU'RE TOO SLOW! GAME OVER!"); // lose game!
-    location.reload(); // reload page
+    var booAudio = document.getElementById('boo'); // play lose game sound
+    booAudio.play();
+    bootbox.confirm({ // show lose game message and give an option to restart or go back home
+      message: 'Boo! You are too slow! ',
+      buttons: {
+        confirm: {
+          label: 'Retry',
+          className: 'btn-success'
+        },
+        cancel: {
+          label: 'Give Up',
+          className: 'btn-danger'
+        }
+      },
+      callback: function(result) {
+        if (result === true) {
+          location.reload();
+        } else {
+          window.location.href = "homePage.html";
+        }
+      }
+    });
   }
 
-  // SOUND
+  // AUDIO
+  function clockSound() {
+    var clock = new Audio('/audio/clock.mp3');
+    clock.play(); // play sound
+  }
+
   function correctSound() {
     var correct = new Audio('/audio/correct.mp3');
-    correct.play();
+    correct.play(); // play sound
   }
 
   function wrongSound() {
     var wrong = new Audio('/audio/wrong.mp3');
-    wrong.play();
+    wrong.play(); // play sound
   }
-
-  function booSound() {
-    var boo = new Audio('/audio/boo.mp3');
-    boo.play();
-  }
-
 });

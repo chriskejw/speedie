@@ -12,21 +12,25 @@
 
 <body>
 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+
   <header>
     <h1 class="timer">speedie</h1>
   </header>
 
-  <div class="jumbotron">
-    <h1>Hello there! Are you ready to play speedie?</h1>
-    <p>This is a simple game to test your reaction time.</p>
-    <p><a class="btn btn-primary btn-lg" href="instructionsPage.html" role="button">How To Play</a></p>
-  </div>
+  <ul class="nav nav-pills">
+    <li role="presentation" class="active"><a href="#">Home</a></li>
+    <li role="presentation"><a href="#">Profile</a></li>
+    <li role="presentation"><a href="#">Messages</a></li>
+  </ul>
 
   <div class="playNowButton">
     <a href="index.html"><button id="playNow" type="button" class="btn btn-success">Play Now</button></a>
   </div>
 
-  <footer id="homeFooter">
+  <footer id="instructFooter">
     Created by <strong>Chris Ke</strong> - <img src='/images/gaLogo.png'> General Assembly Singapore - WDI 6
   </footer>
 

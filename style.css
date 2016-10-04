@@ -3,10 +3,10 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0 auto;
-  }
+}
 
 body {
-  position:relative;
+  position: relative;
 }
 
 header {
@@ -27,14 +27,7 @@ main {
   padding: 50px;
   margin: 4% 20%;
   text-align: center;
-  float:left;
-}
-
-footer {
-  position:absolute;
-  width: 100%;
-  text-align: center;
-  margin-top: 450px;
+  float: left;
 }
 
 button {
@@ -43,7 +36,11 @@ button {
 }
 
 select {
-margin-left: 19%;
+  margin-left: 19%;
+}
+
+ul {
+  position: absolute: right: 40px;
 }
 
 .nav1 {
@@ -61,7 +58,7 @@ margin-left: 19%;
 }
 
 .key {
-  display:inline-block;
+  display: inline-block;
   width: 25px;
   height: 25px;
   vertical-align: middle;
@@ -74,20 +71,11 @@ margin-left: 19%;
   width: 50px;
 }
 
-/*.highScore {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  border: 1px solid black;
-  width: 150px;
-  height: 40px;
-  margin-right: 50px;
-}*/
-
 .jumbotron {
   margin-top: 40px;
   width: 100%;
-  padding: 40px 120px;
+  padding: 70px 120px;
+  height: 400px;
 }
 
 .form-control {
@@ -98,14 +86,41 @@ margin-left: 19%;
   margin-left: 33.5%;
 }
 
-.dropDown{
-  position:absolute;
-  right: 40px;
+.dropdown {
+  position: absolute;
+  top: -15px;
+  right: 20px;
 }
 
-ul {
-  position:absolute:
-  right: 40px;
+.difficulty {
+  height: 110px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #EEEEEE;
+}
+
+.difficultyDisplay {
+  position: absolute;
+  left: 20px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  left: -70px;
+}
+
+.container {
+  position: absolute;
+  top: 250px;
+  left: 300px;
+  width: 680px;
+  line-height: 20px;
+}
+
+.row {
+  display: inline-block;
+  width: 400px;
 }
 
 #startGame {
@@ -118,4 +133,20 @@ ul {
   width: 405px;
   height: 45px;
   font-size: 20px;
+}
+
+#homeFooter {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  margin-top: 64px;
+  display: block;
+}
+
+#indexFooter {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  margin-top: 510px;
+  display: block;
 }
