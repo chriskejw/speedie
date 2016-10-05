@@ -300,7 +300,7 @@ $(document).ready(function() {
         if (result === true) {
           location.reload();
         } else {
-          window.location.href = "homePage.html";
+          window.location.href = "index.html";
         }
       }
     });
@@ -318,12 +318,12 @@ $(document).ready(function() {
   }
 
   function correctSound() {
-    var correct = new Audio('/audio/correct.mp3');
+    var correct = new Audio('audio/correct.mp3');
     correct.play(); // play sound
   }
 
   function wrongSound() {
-    var wrong = new Audio('/audio/wrong.mp3');
+    var wrong = new Audio('audio/wrong.mp3');
     wrong.play(); // play sound
   }
 });
