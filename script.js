@@ -4,22 +4,21 @@ $(document).ready(function() {
   var roundCount = 0; // define the first round
   var totalRounds = 20; // define the total no. of rounds
   var countDown;
-  var colors = ["red, green, blue, yellow, orange, indigo, violet"]; // define the 7 colors
 
   // SELECT DIFFICULTY
   var count = $(function() { // define the time given
     $('select').change(function() { // perform change based on selection from the dropdown
       count = $(this).val(); // get the value from the selection
 
-      if (parseInt(count) === 1000) { // if the value selected corresponds with the figure, change difficulty text
+      if (parseInt(count) === 350) { // if the value selected corresponds with the figure, change difficulty text
         $('.diffDisplay').text('very easy');
-      } else if (parseInt(count) === 800) {
+      } else if (parseInt(count) === 300) {
         $('.diffDisplay').text('easy');
-      } else if (parseInt(count) === 600) {
+      } else if (parseInt(count) === 250) {
         $('.diffDisplay').text('medium');
-      } else if (parseInt(count) === 400) {
-        $('.diffDisplay').text('hard');
       } else if (parseInt(count) === 200) {
+        $('.diffDisplay').text('hard');
+      } else if (parseInt(count) === 150) {
         $('.diffDisplay').text('very hard');
       }
     }).change(); // trigger the event
@@ -33,6 +32,7 @@ $(document).ready(function() {
     countDownTimer(); // start count down timer
     randomPosition(); // generate random positions
     randomColors(); // generate random colors
+    // randomWord(); // generate random word
     checkBox(); // check if correct box is clicked
   });
 
@@ -50,26 +50,55 @@ $(document).ready(function() {
       });
     });
   }
+  //function searchcolor (color string)
+
+  // RANDOM WORD
+  // function randomWord() {
+  //   var wordsArray = ['red', 'green', 'blue', 'yellow', 'orange', 'violet', 'indigo'];
+  //   var randomWordNumber = Math.floor(Math.random() * 7); // create a random number from 0-6
+  //   wordsArray.sort(function() { // sort the array of 0-6 randomly
+  //     return Math.random() - 0.5;
+  //   });
+  //
+  //   $('.key').text(wordsArray[randomWordNumber]) // change text
+  //
+  //       if (($('.key').text(wordsArray[randomWordNumber])) === "red") {
+  //         $('.key').css('color', 'rgb(255, 0, 0)');
+  //       } else if (($('.key').text(wordsArray[randomWordNumber])) === "green") {
+  //         $('.key').css('color', 'rgb(0, 128, 0)');
+  //       } else if (($('.key').text(wordsArray[randomWordNumber])) === "blue") {
+  //         $('.key').css('color', 'rgb(0, 0, 255)');
+  //       } else if (($('.key').text(wordsArray[randomWordNumber])) === "yellow") {
+  //         $('.key').css('color', 'rgb(255, 255, 0)');
+  //       } else if (($('.key').text(wordsArray[randomWordNumber])) === "orange") {
+  //         $('.key').css('color', 'rgb(255, 165, 0)');
+  //       } else if (($('.key').text(wordsArray[randomWordNumber])) === "indigo") {
+  //         $('.key').css('color', 'rgb(75, 0, 130)');
+  //       } else if (($('.key').text(wordsArray[randomWordNumber])) === "violet") {
+  //         $('.key').css('color', 'rgb(238, 130, 238)');
+  //       }
+  //     console.log($('.key').css('color'));
+  // }
 
   // GENERATE COLORS
   function randomColors() {
     // create an array from 0-6
-    var ar = [];
+    var numberArray = [];
     for (var i = 0; i < 7; i++) {
-      ar[i] = i;
+      numberArray[i] = i;
     }
     // sort the array of 0-6 randomly
-    ar.sort(function() {
+    numberArray.sort(function() {
       return Math.random() - 0.5;
     });
     // assign a number from the array to each box
-    var shape1 = ar[0];
-    var shape2 = ar[1];
-    var shape3 = ar[2];
-    var shape4 = ar[3];
-    var shape5 = ar[4];
-    var shape6 = ar[5];
-    var shape7 = ar[6];
+    var shape1 = numberArray[0];
+    var shape2 = numberArray[1];
+    var shape3 = numberArray[2];
+    var shape4 = numberArray[3];
+    var shape5 = numberArray[4];
+    var shape6 = numberArray[5];
+    var shape7 = numberArray[6];
 
     // assign a color to each box based on the number
     if (shape1 === 0) {
@@ -181,6 +210,7 @@ $(document).ready(function() {
     var randomNumber = Math.floor((Math.random() * 7) + 1);
     if (randomNumber === 1) {
       $('.key').css("background-color", "red");
+
     } else if (randomNumber === 2) {
       $('.key').css("background-color", "green");
     } else if (randomNumber === 3) {
@@ -201,12 +231,15 @@ $(document).ready(function() {
     $('.clickBox').on('click', function() { // add event listener to each box
       var color = $(this).css('background-color'); // get the background color of the box
       if (($(this).css('background')) !== ($('.key').css('background'))) { // check if the background color matches the key
+      // if (($(this).css('background-color')) !== ($('.key').val())) {
         wrongSound(); // if not a match, play wrong sound
-      } else if (($(this).css('background')) === ($('.key').css('background'))) {
+          } else if (($(this).css('background')) === ($('.key').css('background'))) { // check if the background color matches the key
+      // } else if (($(this).css('background-color')) === ($('.key').val())) {
         correctSound(); // if match, play correct sound
         roundCount++; // plus one to round
         randomPosition(); // generate random positions again
         randomColors(); // generate random colors again
+        // randomWord(); // generate random word again
       }
       if (roundCount === totalRounds) { // if the round count reaches the total rounds, win game
         winGame();
@@ -232,9 +265,15 @@ $(document).ready(function() {
     clearInterval(countDown); // clear counter
     var winAudio = document.getElementById('win'); // play win game sound
     winAudio.play();
-    bootbox.alert('Bravo! You did it. Your score is ' + count + '.', function() { //show win message and score
-      location.reload()
-    });
+    // bootbox.alert('Bravo! You did it. Your score is ' + count + '.', function() {
+    bootbox.alert({ //show win message and score
+      size: 'big',
+      title: 'Bravo! You did it! Well done!',
+      message: 'Your score is ' + count + '.',
+      callback: function() {
+        location.reload()
+      }
+    })
   };
 
   // LOSE GAME
