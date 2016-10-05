@@ -265,6 +265,7 @@ $(document).ready(function() {
     clearInterval(countDown); // clear counter
     var winAudio = document.getElementById('win'); // play win game sound
     winAudio.play();
+    stopClockSound();
     // bootbox.alert('Bravo! You did it. Your score is ' + count + '.', function() {
     bootbox.alert({ //show win message and score
       size: 'big',
@@ -282,6 +283,7 @@ $(document).ready(function() {
     $('.timer').text('Score: 0'); // reset score to 0
     var booAudio = document.getElementById('boo'); // play lose game sound
     booAudio.play();
+    stopClockSound();
     bootbox.confirm({ // show lose game message and give an option to restart or go back home
       message: 'Boo! You are too slow! ',
       buttons: {
@@ -305,8 +307,13 @@ $(document).ready(function() {
   }
 
   // AUDIO
+  function stopClockSound() {
+    clock.pause();
+    clock.currentTime = 0;
+}
+
   function clockSound() {
-    var clock = new Audio('/audio/clock.mp3');
+    // var clock = new Audio('/audio/clock.mp3');
     clock.play(); // play sound
   }
 
