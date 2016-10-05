@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  //test comment
   // DECLARE THE VARIABLES
   var roundCount = 0; // define the first round
   var totalRounds = 20; // define the total no. of rounds
