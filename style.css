@@ -167,6 +167,12 @@ ul {
   left: 44%;
 }
 
+.htp {
+  position: absolute;
+  top: 40px;
+  left: 46%;
+}
+
 .story {
   margin-top: 160px;
   text-align: center;
@@ -226,5 +232,5 @@ ul {
   position: absolute;
   width: 100%;
   text-align: center;
-  bottom: -311px;
+  bottom: -291px;
 }
