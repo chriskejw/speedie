@@ -58,16 +58,16 @@ ul {
 }
 
 .key {
-  display: inline-block;
-  width: 90px;
-  height: 40px;
-  vertical-align: middle;
+  /*display: inline-block;*/
+  /*width: 90px;
+  height: 40px;*/
+  /*vertical-align: middle;*/
   margin: 0 auto;
-  color: white;
-  line-height: 35px;
-  font-size: 25px;
-  border-radius: 20px;
-  padding: 1px;
+  /*color: white;*/
+  /*line-height: 35px;*/
+  font-size: 40px;
+  /*border-radius: 20px;*/
+  /*padding: 1px;*/
 }
 
 .clickBox {
@@ -134,8 +134,39 @@ ul {
   height: 400px;
 }
 
-.carousel-caption {
+.red {
+  color: red;
+  background-color: red;
+}
 
+.green {
+  color: green;
+  background-color: green;
+}
+
+.blue {
+  color: blue;
+  background-color: blue;
+}
+
+.yellow {
+  color: yellow;
+  background-color: yellow;
+}
+
+.orange {
+  color: orange;
+  background-color: orange;
+}
+
+.indigo {
+  color: indigo;
+  background-color: indigo;
+}
+
+.violet {
+  color: violet;
+  background-color: violet;
 }
 
 #startGame {
@@ -158,11 +189,11 @@ ul {
   display: block;
 }
 
-#indexFooter {
+#playFooter {
   position: absolute;
   width: 100%;
   text-align: center;
-  margin-top: 495px;
+  top: 638px;
   display: block;
 }
 
