@@ -164,11 +164,11 @@ ul {
 .htw {
   position: absolute;
   top: 40px;
-  left: 46%;
+  left: 44%;
 }
 
 .story {
-  margin: 60px auto;
+  margin-top: 160px;
   text-align: center;
 }
 
@@ -178,12 +178,8 @@ ul {
 }
 
 .modalContainer {
-  text-align: center;
-}
-
-.mButtons {
-  position: absolute;
-  width: 200px;
+  margin-top: 20px;
+  margin-left: 390px;
 }
 
 #startGame {
@@ -230,5 +226,5 @@ ul {
   position: absolute;
   width: 100%;
   text-align: center;
-  bottom: -126px;
+  bottom: -311px;
 }
