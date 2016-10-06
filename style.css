@@ -58,16 +58,8 @@ ul {
 }
 
 .key {
-  /*display: inline-block;*/
-  /*width: 90px;
-  height: 40px;*/
-  /*vertical-align: middle;*/
   margin: 0 auto;
-  /*color: white;*/
-  /*line-height: 35px;*/
   font-size: 40px;
-  /*border-radius: 20px;*/
-  /*padding: 1px;*/
 }
 
 .clickBox {
@@ -169,6 +161,31 @@ ul {
   background-color: violet;
 }
 
+.htw {
+  position: absolute;
+  top: 40px;
+  left: 46%;
+}
+
+.story {
+  margin: 60px auto;
+  text-align: center;
+}
+
+.arrows {
+  margin-left: 180px;
+  margin-top: -45px;
+}
+
+.modalContainer {
+  text-align: center;
+}
+
+.mButtons {
+  position: absolute;
+  width: 200px;
+}
+
 #startGame {
   width: 405px;
   height: 45px;
@@ -198,7 +215,7 @@ ul {
 }
 
 #instructPlayNow {
-  position:absolute;
+  position: absolute;
   bottom: -95px;
 }
 
@@ -207,4 +224,11 @@ ul {
   width: 100%;
   text-align: center;
   margin-top: 159px;
+}
+
+#howitsmadeFooter {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: -126px;
 }

@@ -82,9 +82,9 @@ $(document).ready(function() {
   function checkBox() {
     $('.clickBox').on('click', function() { // add event listener to each box
       var color = $(this).css('background-color'); // get the background color of the box
-  if (($(this).css('background-color')) !== ($('.key').css('color'))) { // check if the background color matches the key
+      if (($(this).css('background-color')) !== ($('.key').css('color'))) { // check if the background color matches the key
         wrongSound(); // if not a match, play wrong sound
-  } else if (($(this).css('background-color')) === ($('.key').css('color'))) { // check if the background color matches the key
+      } else if (($(this).css('background-color')) === ($('.key').css('color'))) { // check if the background color matches the key
         correctSound(); // if match, play correct sound
         roundCount++; // plus one to round
         randomPosition(); // generate random positions again
