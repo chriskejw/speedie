@@ -1,0 +1,27 @@
+{
+  "name": "speedie",
+  "version": "1.0.0",
+  "description": "Title",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "method-override": "^2.3.6",
+    "nodemon": "^1.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chriskejw/speedie.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chriskejw/speedie/issues"
+  },
+  "homepage": "https://github.com/chriskejw/speedie#readme"
+}
