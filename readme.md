@@ -6,7 +6,7 @@
 
 - This is a simple game to test your reaction time. There are 7 boxes that will generate randomly in different colors and positions every time the correct box (color that matches the font color of the word displayed at the top) is clicked. Click as many correct boxes as you can before the time runs out.
 
-#Builtwith
+#Built With
 
 - html
 - CSS
