@@ -20,20 +20,20 @@
 
 #Prerequisities
 
-- This game only works properly on desktop.
-- No, it's not mobile friendly.
+- This game only works on desktop.
+- No, it is not mobile friendly.
 
 #Version
 
-- 1.0
+- v1.0
 
 #Author
 
-- Chris Ke - Student @ General Assembly Singapore - Wed Development Immersive 6
+- Chris Ke - Student @ General Assembly Singapore - Web Development Immersive 6
 
 #Credits
 
-- The course mates, instructor and teaching assistants of General Assembly Singapore - WDI 6
+- The coursemates, instructor and teaching assistants of General Assembly Singapore - WDI 6
 - Mozilla Developer Network
 - w3schools.com
 - stackoverflow.com
@@ -41,4 +41,4 @@
 
 #Contact
 
-- Please do not hesitate to drop me a message if you encountered any bugs/errors or have any suggestions/ideas to share. Thanks & have fun!
+- Please do not hesitate to drop me a message if you encountered any bugs / errors or have any suggestions/ideas to share. Thanks & have fun!
