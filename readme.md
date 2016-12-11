@@ -41,4 +41,4 @@
 
 #Contact
 
-- Please do not hesitate to drop me a mail on chriskejw@gmail.com if you encounter any bugs / errors or have any suggestions / ideas to share. Thanks & have fun!
+- Please do not hesitate to drop me a mail at chriskejw@gmail.com if you encounter any bugs / errors or have any suggestions / ideas to share. Thanks & have fun!
