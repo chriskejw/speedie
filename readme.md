@@ -1,6 +1,6 @@
 #Title
 
-- speedie
+- speedie | simple speed reaction game
 
 #Objective
 
@@ -8,7 +8,7 @@
 
 #Built With
 
-- html
+- HTML
 - CSS
 - JavaScript / jQuery
 
@@ -41,4 +41,4 @@
 
 #Contact
 
-- Please do not hesitate to drop me a message if you encountered any bugs / errors or have any suggestions/ideas to share. Thanks & have fun!
+- Please do not hesitate to drop me a mail on chriskejw@gmail.com if you encounter any bugs / errors or have any suggestions / ideas to share. Thanks & have fun!
